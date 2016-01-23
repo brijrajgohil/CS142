@@ -1,0 +1,33 @@
+p {
+  border-top: 1px solid #cccccc;
+  margin-top: -2px;
+  margin-left: 2px;
+}
+td {
+	font-family: "Tahoma";
+	font-size: 13px;
+  padding: 2px 2px 0px 2px;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: #cc6600;
+  cursor: pointer;
+}
+
+.selected {
+  background-image: url("img/left-selected.gif"), url("img/right-selected.gif"), url("img/mid-selected.gif");
+  background-repeat: no-repeat, no-repeat, repeat;
+  background-position: left, right, 5px top;
+  border-bottom: 2px solid #fff;
+  font-weight: bold;
+}
+
+.nselected {
+  background-image: url("img/left.gif"), url("img/right.gif"), url("img/mid.gif");
+  background-repeat: no-repeat, no-repeat, repeat;
+  background-position: left, right, top;
+}
