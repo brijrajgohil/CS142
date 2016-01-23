@@ -1,4 +1,7 @@
-
+.tab {
+  margin-left: 10px;
+  margin-right: 10px;
+}
 p {
   border-top: 1px solid #cccccc;
   margin-top: -2px;
@@ -23,13 +26,12 @@ a:hover {
 .selected {
   background-image: url("img/left-selected.gif"), url("img/right-selected.gif"), url("img/mid-selected.gif");
   background-repeat: no-repeat, no-repeat, repeat;
-  background-position: left, right, 5px top;
-  border-bottom: 2px solid #fff;
+  background-position: 0px 0px, 100% 0%, 0% 0%;
   font-weight: bold;
 }
 
 .nselected {
   background-image: url("img/left.gif"), url("img/right.gif"), url("img/mid.gif");
   background-repeat: no-repeat, no-repeat, repeat;
-  background-position: left, right, top;
+  background-position: 0px 0px, 100% 0%, 0% 0%;
 }
