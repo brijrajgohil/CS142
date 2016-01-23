@@ -1,9 +1,11 @@
+
 p {
   border-top: 1px solid #cccccc;
   margin-top: -2px;
   margin-left: 2px;
 }
 td {
+  margin: 5px;
 	font-family: "Tahoma";
 	font-size: 13px;
   padding: 2px 2px 0px 2px;
