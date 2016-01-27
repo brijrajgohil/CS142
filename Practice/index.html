@@ -5,15 +5,24 @@
 <h1>Introduction</h1>
 <body>
 	<p>There are several good reasons for taking <i> CS142: Web Applications </i></p>
-	<ul>
-		<li>
+	<ul class="myList">
+		<li id="king" onclick="helloworld()">
 			You will learn a variety of concepts.
 		</li>
-		<li>
+		<li id="jack" onclick="helloworld()">
 			It may inspire the way software is developed.
 		</li>
-		<li>
+		<li id="ace" onclick="helloworld">
 			It will give you the tools to become fabulously wealthy.
 		</li>
 	</ul>
+	<script>
+		function helloworld() {
+			var list = document.getElementsByClassName("myList");
+			var newE = document.createElement("LI");
+			var textNode = document.createTextNode("Hell Yeah!");
+			newE.appendChild(textNode);
+			list.insertBefore(newE, list.childNodes[1]);
+		}
+	</script>
 </body>
