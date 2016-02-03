@@ -26,8 +26,9 @@ function cs142FormatTime(dateConvert) {
   }
   return dictDays[dateConvert.getDay()] + ", "
    + dictMonths[dateConvert.getMonth()] + " " + dateConvert.getDay() + ", "
-   + dateConvert.getFullYear() + " " + dateConvert.getHours() + ":"
+   + dateConvert.getFullYear() + " "
+   + (dateConvert.getHours() <= 9 ? "0" + dateConvert.getHours() : dateConvert.getHours()) + ":"
    + (dateConvert.getMinutes() <= 9 ? "0" + dateConvert.getMinutes() : dateConvert.getMinutes())
-   + (dateConvert.getHours > 12 ? " PM" : " AM");
+   + (dateConvert.getHours() >= 12 ? " PM" : " AM");
 
 }
