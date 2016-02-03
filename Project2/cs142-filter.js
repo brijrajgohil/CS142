@@ -1,11 +1,9 @@
-function filterOwn(clientData, isOK) {
-  var a = new Array();
-  if(isOK(clientData, elem)) {
-    a.append(elem);
+Array.prototype.cs142filter = function (clientData, isOK) {
+  var result = new Array();
+  for(var i = 0; i < this.length; i++) {
+    if(isOK(clientData, this[i])) {
+      result.push(this[i]);
+    }
   }
-  return a;
-}
-
-var varA = [1, 2, 3, 4, 5, 6].cs142filter(2, function (modVal, elm) {
-   return ((elm % modVal) === 0);
-});
+  return result;
+};
