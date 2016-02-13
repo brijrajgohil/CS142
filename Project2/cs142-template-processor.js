@@ -3,7 +3,7 @@ function Cs142TemplateProcessor(st) {
 }
 
 Cs142TemplateProcessor.prototype.fillIn = function (dict) {
-  var a = this.toString();
+  var a = String(this);
   console.log(a);
   if(a.indexOf("month") != -1) {
     a.replace("{{month}}", dict.month);
@@ -22,5 +22,5 @@ var dateTemplate = new Cs142TemplateProcessor(template);
 
 var dictionary = { month: 'July', day: '1', year: '2016'};
 var str = dateTemplate.fillIn(dictionary);
-
-console.log(str);
+//assert(str === 'My favorite month is July but not the day 1 or the year 2016');
+//console.log(str);
