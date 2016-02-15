@@ -13,21 +13,34 @@
 </head>
 
 <body>
-		<div class="styleClass" onclick="alert("Div Clicked")">Div Element
-			<span class="styleClass" onclick="alert("Span Clicked")">SPAN Element
-				<input type="button" value="Click me" onclick="alert("Button Clicked")"/>
-			</span>
-		</div>
+		<input type="button" value="Click Me" onmouseup="getMouseClickCode(event)" />
+		<input type="button" value="Clear" onclick="clearText()"/>
+		<br/><br/>
+		<textarea id="txtArea" cols="3" rows="20"></textarea>
 	<script>
-		function changeColorOnMouseOver() {
-			var control = document.getElementById("btn");
-			control.style.background = "red";
-			control.style.color = "yellow";
+		function clearText() {
+			document.getElementById("txtArea").value = "";
 		}
-		function changeColorOnMouseOut() {
-			var control = document.getElementById("btn");
-			control.style.background = "black";
-			control.style.color = "white";
+
+		function getMouseClickCode(event) {
+			if(event.which) {
+				document.getElementById("txtArea").value += "event.which = " + event.which + "\r\n";
+			}
+			else {
+				document.getElementById("txtArea").value += "event.button = " + event.button + "\r\n";
+			}
+		}
+
+		document.oncontextmenu = preventContextMenu;
+
+		function preventContextMenu(event) {
+			event = event || window.event;
+			if(event.preventDefault) {
+				event.preventDefault();
+			}
+			else {
+				event.returnValue = false;
+			}
 		}
 	</script>
 </body>
