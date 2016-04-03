@@ -1,9 +1,7 @@
-var a = 2;
-
-(function() {
-    var a  = 3;
-        console.log(a);
-    }
-)();
-
-console.log(a);
+try {
+    fuck();
+} catch (e) {
+    console.log(e);
+} finally {
+    console.log("Finally");
+}
