@@ -1,7 +1,6 @@
-try {
-    fuck();
-} catch (e) {
-    console.log(e);
-} finally {
-    console.log("Finally");
-}
+foo();
+
+var a = true;
+
+if(a) { function foo() { console.log("Helloo"); } }
+else { function foo() { console.log("Cool"); } }
