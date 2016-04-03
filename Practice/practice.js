@@ -1,6 +1,13 @@
+function foo() {
+    var a = 2;
+    function baz() {
+        console.log(a);
+    }
+    bar(baz);
+}
+
+function bar(fn) {
+    fn();
+}
+
 foo();
-
-var a = true;
-
-if(a) { function foo() { console.log("Helloo"); } }
-else { function foo() { console.log("Cool"); } }
