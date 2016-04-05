@@ -1,7 +1,21 @@
-for (var i = 1; i <= 5; i++) {
-    (function() {
-        setTimeout(function timer() {
-            console.log(i);
-        }, i*1000);
-    })();
+function CoolModule() {
+    var something = "cool";
+    var another = [1, 2, 3];
+
+    function doSomething() {
+        console.log(something);
+    }
+
+    function doAnother() {
+        console.log(another);
+    }
+
+    return {
+        doSo: doSomething,
+        doAn: doAnother
+    };
 }
+
+var foo = CoolModule();
+foo.doSo;
+foo.doAn;
