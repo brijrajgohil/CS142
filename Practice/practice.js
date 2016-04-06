@@ -2,15 +2,7 @@ function foo() {
     console.log(this.a);
 }
 
-var obj2 = {
-    a: 42,
-    foo: foo
+var obj = {
+    a: 2
 };
-
-var obj1 = {
-    a: 2,
-    obj2: obj2
-};
-
-
-obj1.obj2.foo();
+foo.call(obj);
