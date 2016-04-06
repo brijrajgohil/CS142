@@ -1,21 +1,10 @@
-function CoolModule() {
-    var something = "cool";
-    var another = [1, 2, 3];
 
-    function doSomething() {
-        console.log(something);
-    }
+var a = 2;
+console.log(a);
 
-    function doAnother() {
-        console.log(another);
-    }
-
-    return {
-        doSo: doSomething,
-        doAn: doAnother
-    };
+function foo() {
+    a = 4;
+    console.log(this.a);
 }
 
-var foo = CoolModule();
-foo.doSo;
-foo.doAn;
+foo();
