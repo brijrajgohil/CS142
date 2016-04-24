@@ -1,10 +1,8 @@
-function myFunc(routine) {
-    console.log("Called with", routine.toString()); //Will display the function
-    var retVal = routine(10); //Will display 10 and return 11
-    console.log("retVal", retVal);
+var globalVar = 0;
+function localFunc(argVar) {
+    var localVar = 0;
+    function emberFunc() { return ++localVar + argVar + globalVar};
+    return emberFunc
 }
-
-myFunc(function(x) {
-    console.log("Called with ", x);
-    return x + 1;
-});
+var myFunc = localFunc(10);
+console.log(myFunc);
