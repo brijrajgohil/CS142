@@ -1,8 +1,3 @@
-var globalVar = 0;
-function localFunc(argVar) {
-    var localVar = 0;
-    function emberFunc() { return ++localVar + argVar + globalVar};
-    return emberFunc
-}
-var myFunc = localFunc(10);
-console.log(myFunc);
+var obj = { ps: 'str', pn: 1, pa: [1,'two',3,4], po: { sop: 1}};
+var s = JSON.stringify(obj);
+console.log(JSON.parse(s));
