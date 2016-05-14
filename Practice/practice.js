@@ -1,3 +1,12 @@
-var obj = { ps: 'str', pn: 1, pa: [1,'two',3,4], po: { sop: 1}};
-var s = JSON.stringify(obj);
-console.log(JSON.parse(s));
+
+function confirmEnding(str, target) {
+  // "Never give up and good luck will find you."
+  // -- Falcor
+  console.log(str.substr(-target.length));
+  if(str.substr(-target.length) == target) {
+      return true;
+  }
+  return false;
+}
+
+confirmEnding("He has to give me a new name", "me");
