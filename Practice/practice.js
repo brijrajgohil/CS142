@@ -1,15 +1,48 @@
 
-function getIndexToIns(arr, num) {
-  // Find my place in this sorted array.
-  var arr1 = arr.sort(function(a, b) {
-      return a - b;
-  });
-  console.log(arr1);
-  for(var i = 0; i < arr1.length; i++) {
-    if(arr[i] > num) {
-        return arr[i-1] == num ? i-1: i;
+function convertToRoman(num) {
+  var mapper = {
+    1: "I",
+    2: "II",
+    3: "III",
+    4: "IV",
+    5: "V",
+    6: "VI",
+    7: "VII",
+    8: "VIII",
+    9: "IX",
+    10: "X",
+    20: "XX",
+    30: "XXX",
+    40: "XL",
+    50: "L",
+    60: "LX",
+    70: "LXX",
+    80: "LXXX",
+    90: "XC",
+    100: "C",
+    200: "CC",
+    300: "CCC",
+    400: "CD",
+    500: "D",
+    600: "DC",
+    700: "DCC",
+    800: "DCCC",
+    900: "DM",
+    1000: "M"
+  };
+  var arr = [];
+  do {
+    var r = num % 10;
+    if(num in mapper) {
+      arr.unshift(mapper[num]);
+      num = 0;
+   }
+    else if(r in mapper) {
+      arr.unshift(mapper[r]);
+      num = num - r;
     }
-  }
+  } while(num !== 0);
+  return arr.join("");
 }
 
-console.log(getIndexToIns([5, 3, 20, 3], 5));
+console.log(convertToRoman(798));
