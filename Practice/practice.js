@@ -1,48 +1,12 @@
 
-function convertToRoman(num) {
-  var mapper = {
-    1: "I",
-    2: "II",
-    3: "III",
-    4: "IV",
-    5: "V",
-    6: "VI",
-    7: "VII",
-    8: "VIII",
-    9: "IX",
-    10: "X",
-    20: "XX",
-    30: "XXX",
-    40: "XL",
-    50: "L",
-    60: "LX",
-    70: "LXX",
-    80: "LXXX",
-    90: "XC",
-    100: "C",
-    200: "CC",
-    300: "CCC",
-    400: "CD",
-    500: "D",
-    600: "DC",
-    700: "DCC",
-    800: "DCCC",
-    900: "DM",
-    1000: "M"
-  };
-  var arr = [];
-  do {
-    var r = num % 10;
-    if(num in mapper) {
-      arr.unshift(mapper[num]);
-      num = 0;
-   }
-    else if(r in mapper) {
-      arr.unshift(mapper[r]);
-      num = num - r;
+function myReplace(str, before, after) {
+    var arr = str.split(" ");
+    if(arr[arr.indexOf(before)][0] == arr[arr.indexOf(before)][0].toUpperCase()) {
+        var string1 = after[0].toUpperCase() + after.slice(1);
     }
-  } while(num !== 0);
-  return arr.join("");
+    str = arr.join(" ");
+    return str.replace(before, string1);
+
 }
 
-console.log(convertToRoman(798));
+console.log(myReplace("Let us get back to more Coding", "Coding", "algorithms"));
