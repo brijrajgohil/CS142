@@ -1,12 +1,12 @@
-
-function myReplace(str, before, after) {
-    var arr = str.split(" ");
-    if(arr[arr.indexOf(before)][0] == arr[arr.indexOf(before)][0].toUpperCase()) {
-        var string1 = after[0].toUpperCase() + after.slice(1);
+function fearNotLetter(str) {
+    var j = 0;
+    for(var i = str.charCodeAt(0); i <= str.charCodeAt((str.length)-1); i++) {
+        if(String.fromCharCode(i) != str[j]) {
+            return String.fromCharCode(i);
+        }
+        j++;
     }
-    str = arr.join(" ");
-    return str.replace(before, string1);
-
+    return undefined;
 }
 
-console.log(myReplace("Let us get back to more Coding", "Coding", "algorithms"));
+console.log(fearNotLetter("abce"));
